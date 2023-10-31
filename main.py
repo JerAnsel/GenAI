@@ -58,7 +58,7 @@ def register_user(user_message: str, camp_details: str, conversation_history: li
 
     registration_prompt = ("You are an assistant tasked with registering children to a fictitious summer camp. The following details are "
                    "required for registration: Child's Name, Age, Dietary Restrictions, Parent's Name, Parent's Phone Number and "
-                   "Parent's Email.")
+                   f"Parent's Email. Ensure the child is of the age mentioned in the camp details. Here are the camp details {camp_details}")
     
     answer = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
